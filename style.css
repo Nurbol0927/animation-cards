@@ -1,0 +1,67 @@
+body{
+    background-color: teal;
+}
+h1 {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 40px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: red;
+}
+
+.gallery {
+    height: 80%;
+    width: 100%;
+    display: flex;
+    margin: 5% auto 0;
+    box-sizing: border-box;
+    overflow: hidden; /* Добавлено, чтобы предотвратить выход контента за пределы контейнера */
+}
+
+.image-box {
+    margin: 0 1%;
+    flex-grow: 1;
+    flex-basis: 0;
+    transition: 1s;
+    overflow: hidden; /* Скрываем части изображения, выходящие за пределы контейнера */
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Изображение покрывает весь доступный контейнер, сохраняя пропорции */
+    transition: transform 0.2s ease; /* Добавлено для плавного увеличения */
+    border-radius: 30px;
+    border: 5px blue;
+}
+
+.image-box:hover {
+    flex-basis: 50%;
+    border-radius: 30px;
+    border: 5px solid red;
+}
+
+.image-box:hover img {
+    transform: scale(1.1); /* Небольшое увеличение изображения при наведении */
+}
+
+.active {
+    flex-basis: 50%;
+}
+
+.gallery:hover .active {
+    flex-basis: 50%;
+
+}
+
+.image-box:nth-child(1):hover {
+    flex-basis: 50%;
+}
+
+.image-box:target {
+    flex-basis: 50%;
+}
+
+.image-box:target img {
+    transform: scale(1.1);
+}
